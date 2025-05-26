@@ -4,10 +4,10 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Vorflugkontrolle", color: rgb("e3a21e"))[
+#section("Vorflugkontrolle", color: colors.preflight)[
+  #step("Benzintanks", "Drainen")
   #step("Lane A/B", "Aus")
   #step("Parkbremse", "Gesetzt")
-  #step("Benzintanks", "Gedrained")
   #step("Benzinvorrat", "Geprüft")
   #step("Propeller", "Geprüft")
   #step("Ölstand", "Geprüft")
@@ -21,7 +21,7 @@
   #step("Haube", "Verriegelt")
 ]
 
-#section("Motorstart", color: rgb("a16bcf"))[
+#section("Motorstart", color: colors.engine)[
   #step("Außentemperatur", "-10 bis 50°C")
   #comment("Motor bei unter 10°C vorwärmen")
   #step("Öltemperatur", "über -20°C")
@@ -36,14 +36,15 @@
   #step("Strobe", "Ein")
   #step("Gashebel", "nach Öltemperatur")
   #comment([10°C → 40% ~ 0°C → 45% ~ -5°C → 50% #linebreak() -10°C → 55% ~ -15°C → 60%])
-  #step("Starter", [Drücken _max 10s_])
+  #step("Starter", "Drücken")
+  #comment([max. 10s → 2 Minuten warten])
   #step("Gashebel", "2000 RPM")
   #step("Start Power", "Aus")
   #step("Flight Instruments", "Ein")
   #step("Avionic", "Ein")
 ]
 
-#section("Warmlauf", color: rgb("a16bcf"))[
+#section("Warmlauf", color: colors.engine)[
   #step("Gashebel", "2500 RPM")
   #step("Höhenmesser", "Eingestellt")
   #step("Funk", "Eingestellt")
@@ -54,14 +55,14 @@
   #step("Gashebel", "2000 RPM")
 ]
 
-#section("Rollen", color: rgb("a16bcf"))[
+#section("Rollen", color: colors.engine)[
   #step("Parkbremse", "Gelöst")
   #step("Höhenruder", "in Mittelstellung halten")
   #step("Steuerung", "Geprüft")
   #step("Bremsen", "Geprüft")
 ]
 
-#section("Motortest", color: rgb("a16bcf"))[
+#section("Motortest", color: colors.engine)[
   #step("Parkbremse", "Gesetzt")
   #step("Temperaturen", "Grüner Bereich")
   #step("Gashebel", "2500 RPM")
@@ -76,7 +77,7 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Vor dem Abflug", color: rgb("3bc821"), line-height: 1.3em)[
+#section("Vor dem Abflug", color: colors.takeoff, line-height: 1.3em)[
   #step("Haube", "Verriegelt")
   #step("Lane A/B", "Ein")
   #step("Warnlampe A/B", "Aus")
@@ -88,10 +89,10 @@
   #step("Steuerung", "Freigängig")
   #step("Abflugverfahren", "Besprochen")
   #step("Sicherheitsbriefing", "Durchgeführt")
-  #step("Positionslichter", "Nach Bedarf")
+  #step("Positionslichter", "nach Bedarf")
 ]
 
-#section("Start", color: rgb("3bc821"), line-height: 1.3em)[
+#section("Start", color: colors.takeoff, line-height: 1.3em)[
   #step("Bremse", "Gelöst")
   #step("Gashebel", "Vollgas")
   #step("Drehzahl", "Geprüft")
@@ -102,7 +103,7 @@
   #comment([V#sub[Y] (best rate of climb) / V#sub[X] (best angle of climb)])
 ]
 
-#section("Reiseflug", color: rgb("3bc821"), line-height: 1.3em)[
+#section("Reiseflug", color: colors.takeoff, line-height: 1.3em)[
   #step("Gashebel", "nach Bedarf")
   #comment("max. 5800 RPM / 5500 RPM (dauerhaft)")
   #step("Trimmung", "nach Bedarf")
@@ -112,13 +113,13 @@
   #comment("Alle 20 Minuten wechseln")
 ]
 
-#section("Sinkflug", color: rgb("245d90"), line-height: 1.3em)[
+#section("Sinkflug", color: colors.landing, line-height: 1.3em)[
   #step("Gashebel", "15-17 inHg")
   #step("Geschwindigkeit", "165-185 km/h")
   #comment("→ Sinkrate 500 ft/min")
 ]
 
-#section("Anflug", color: rgb("245d90"), line-height: 1.3em)[
+#section("Anflug", color: colors.landing, line-height: 1.3em)[
   #step("ATIS / Wetter", "Informationen eingeholt")
   #step("Anflugverfahren", "Durchgesprochen")
   #step("Gurte", "Festgezogen")
@@ -129,14 +130,14 @@
   #step("Klappen", "10°")
 ]
 
-#section("Endanflug", color: rgb("245d90"), line-height: 1.4em)[
+#section("Endanflug", color: colors.landing, line-height: 1.4em)[
   #step("Geschwindigkeit", "120 km/h")
   #step("Klappen", "30°")
   #step("Gashebel", "7 inHg / über 2600 RPM")
 ]
 
-#section("Durchstarten", color: rgb("e33e3c"), line-height: 1.4em)[
-  #comment(text(fill: rgb("e33e3c"), weight: "bold", "POWER → PITCH → FLAPS"))
+#section("Durchstarten", color: colors.emergency, line-height: 1.4em)[
+  #comment(text(fill: colors.emergency, weight: "bold", "POWER → PITCH → FLAPS"))
   #step("Gashebel", "Vollgas")
   #step("Geschwindigkeit", "130 km/h")
   #step("Klappen", "10°")
@@ -144,19 +145,19 @@
   #step("Geschwindigkeit", "148 km/h")
 ]
 
-#section("Landung", color: rgb("245d90"), line-height: 1.4em)[
+#section("Landung", color: colors.landing, line-height: 1.4em)[
   #step("Gashebel", "Leerlauf")
   #step("Aufsetzen", "auf den Haupträdern")
   #step("Bremsen", "nach Bedarf")
   #step("Klappen", "Einfahren")
 ]
 
-#section("Nach der Landung", color: rgb("245d90"), line-height: 1.4em)[
+#section("Nach der Landung", color: colors.landing, line-height: 1.4em)[
   #step("Gashebel", "nach Bedarf")
   #step("Trimmung", "Neutral")
 ]
 
-#section("Abstellen und Parken", color: rgb("7fa5c2"), line-height: 1.4em)[
+#section("Abstellen und Parken", color: colors.parking, line-height: 1.4em)[
   #step("Parkbremse", "Gesetzt")
   #step("Gashebel", "2000 RPM")
   #step("Timer", "Gestartet")
@@ -174,13 +175,13 @@
 
 #show: checklist.with(aircraft: aircraft, emergency: true)
 
-#section([Triebwerksausfall #text(size: 0.8em, "(Startlauf)")], color: rgb("e33e3c"))[
+#section([Triebwerksausfall #text(size: 0.8em, "(Startlauf)")], color: colors.emergency)[
   #step("Gashebel", "Leerlauf")
   #step("Lane A/B", "Aus")
   #step("Bremse", "Betätigen")
 ]
 
-#section([Triebwerksausfall #text(size: 0.8em, "(im Flug)")], color: rgb("e33e3c"))[
+#section([Triebwerksausfall #text(size: 0.8em, "(im Flug)")], color: colors.emergency)[
   #step("Geschwindigkeit", "120 km/h")
   #step("Höhe", "unter 150 ft: in Startrichtung landen")
   #step("", "über 150 ft: Landefeld wählen")
@@ -195,7 +196,7 @@
   #step("Landen", "")
 ]
 
-#section("Triebwerk Neustart", color: rgb("e33e3c"))[
+#section("Triebwerk Neustart", color: colors.emergency)[
   #step("AUX Pump", "Ein")
   #step("Tankwahlschalter", "vollerer Tank")
   #step("Gashebel", "Mittelstellung")
@@ -205,7 +206,7 @@
   #step("Start Power", "Aus")
 ]
 
-#section([Feuer #text(size: 0.8em, "(im Flug)")], color: rgb("e33e3c"))[
+#section([Feuer #text(size: 0.8em, "(im Flug)")], color: colors.emergency)[
   #step("Heizung", "Aus")
   #step("Tankwahlschalter", "Aus")
   #step("Gashebel", "Vollgas")
@@ -215,7 +216,7 @@
   #step("Notlandung", "siehe Triebwerksausfall")
 ]
 
-#section("Trudeln", color: rgb("e33e3c"), line-height: 1.558em)[
+#section("Trudeln", color: colors.emergency)[
   #step("Gashebel", "Leerlauf")
   #step("Steuerknüppel", "Neutralstellung")
   #step("Seitenruder", "Gegen die Drehrichtung")
@@ -225,18 +226,18 @@
   #step("Höhenruder", "Langsam abfangen")
 ]
 
-#section("Verlust der Steuerung", color: rgb("e33e3c"), line-height: 1.558em)[
+#section("Verlust der Steuerung", color: colors.emergency)[
   #step("Querruder", "mit Seitenruder steuern")
-  #step("", [_notfalls Rettungsgerät auslösen_])
+  #comment([notfalls Rettungsgerät auslösen])
   #step("Höhenruder", "ggf. mit Trimmruder steuern")
-  #step("", [_notfalls Rettungsgerät auslösen_])
-  #step("Seitenruder", "ggf. mit Seitenruder steuern")
+  #comment([notfalls Rettungsgerät auslösen])
+  #step("Seitenruder", "ggf. mit Querruder steuern")
   #step("Klappen", "Geschwindigkeit anpassen")
   #step("", "am nächsten Flugplatz landen")
   #step("", "mehr Landestrecke einplanen")
 ]
 
-#section("Rettungssystem", color: rgb("e33e3c"))[
+#section("Rettungssystem", color: colors.emergency)[
   #step("ggf. Transponder", "7700")
   #step("ggf. Funk", [Notfallmeldung _mit Position_])
   #step("Rettungssystem", "Auslösen")
