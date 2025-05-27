@@ -4,7 +4,7 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Vorflugkontrolle", color: colors.preflight, line-height: 1.42em)[
+#section("Vorflugkontrolle", color: colors.preflight)[
   #step("Kraftstoffmenge", "Geprüft")
   #step("Trimmgewichte", "Geprüft")
   #step("Kuller", "Entfernt")
@@ -16,7 +16,7 @@
   #step("Steuerung", "Geprüft")
 ]
 
-#section("Motorstart", color: colors.engine, line-height: 1.42em)[
+#section("Motorstart", color: colors.engine)[
   #step("Brandhahn", "Geöffnet")
   #step("Hauptschalter", "Ein")
   #step("Triebwerkschalter", "Ein")
@@ -33,7 +33,7 @@
   #comment([Drehzahl muss über 2700 RPM bleiben])
 ]
 
-#section("Rollen", color: colors.engine, line-height: 1.42em)[
+#section("Rollen", color: colors.engine)[
   #comment("Nach Möglichkeit vermeiden")
   #step("Wölbklappe", "0°")
   #step("Trimmung", "Schwanzlastig")
@@ -41,7 +41,7 @@
   #step("Rechte Hand", "Gashebel")
 ]
 
-#section("Start", color: colors.takeoff, line-height: 1.42em)[
+#section("Start", color: colors.takeoff)[
   #step("Wölbklappe", "8°")
   #step("Trimmung", "Schwanzlastig")
   #step("Höhenruder", "Gezogen halten")
@@ -52,7 +52,7 @@
   #step("Fahrwerk", [Einfahren _auf Sicherheitshöhe_])
 ]
 
-#section("Triebwerk einfahren", color: colors.landing, line-height: 1.42em)[
+#section("Triebwerk einfahren", color: colors.landing)[
   #step("Gashebel", "Leerlauf")
   #step("Geschwindigkeit", "90 km/h")
   #step("Kühlwasser", "4°C Temperaturabfall")
@@ -69,7 +69,7 @@
   #step("Triebwerkschalter", "Aus")
 ]
 
-#section("Anlassen in der Luft", color: colors.takeoff, line-height: 1.42em)[
+#section("Anlassen in der Luft", color: colors.takeoff)[
   #step("Triebwerkschalter", "Ein")
   #step("Brandhahn", "Geöffnet")
   #step("Primer", "Auto")
@@ -85,7 +85,7 @@
   #step("Trimmung", "Schwanzlastig")
 ]
 
-#section("Landung", color: colors.landing, line-height: 1.42em)[
+#section("Landung", color: colors.landing)[
   #step("Fahrwerk", "Ausgefahren")
   #step("Wind", "Geprüft")
   #step("Gurte", "Festgezogen")
@@ -95,14 +95,14 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Aufrüsten", color: colors.parking, line-height: 1.2em)[
+#section("Aufrüsten", color: colors.parking, line-height: 1.532em)[
   #step("Bremsklappen", "Verriegelt")
   #step("Wölbklappe", "0°")
   #step("Trimmung", "Vordere Stellung")
   #step("Innenflächen", "Rechts zuerst")
 ]
 
-#section("Tägliche Kontrolle", color: colors.parking, line-height: 1.2em)[
+#section("Tägliche Kontrolle", color: colors.parking, line-height: 1.532em)[
   #step("Haubennotabwurf", "Verriegelt")
   #step("Hauptbolzen", "Gesichert")
   #step("Ruderprobe", "Durchgeführt")
@@ -133,7 +133,7 @@
   #step("Flügel rechts", "Geprüft")
 ]
 
-#section("Abrüsten", color: colors.parking, line-height: 1.2em)[
+#section("Abrüsten", color: colors.parking, line-height: 1.532em)[
   #step("Flug", "Ausgelesen")
   #step("Motorzähler", "Notiert")
   #step("Hauptschalter", "Aus")
@@ -148,12 +148,12 @@
   #step("Rumpf", "Angeschnallt")
 ]
 
-#section("Motor fährt nicht aus", color: colors.emergency, line-height: 1.25em)[
+#section("Motor fährt nicht aus", color: colors.emergency)[
   #step("Sicherungen", "Prüfen")
   #step("Batteriespannung", "Prüfen")
 ]
 
-#section("Motor abgesoffen", color: colors.emergency, line-height: 1.25em)[
+#section("Motor abgesoffen", color: colors.emergency)[
   #step("Primer", "Aus")
   #step("Brandhahn", "ggf. schließen")
   #step("Gashebel", "Vollgas")
@@ -163,7 +163,7 @@
   #step("Gashebel", "3000 RPM")
 ]
 
-#section("Dampfblasen", color: colors.emergency, line-height: 1.25em)[
+#section("Dampfblasen", color: colors.emergency)[
   #comment(text(fill: colors.emergency, [Motor nimmt kein Gas an]))
   #step("Gashebel", "Leerlauf")
   #step("Anlasser", "mehrmals drücken")
@@ -171,12 +171,12 @@
   #step("Gas geben", "wenn konstante Drehzahl")
 ]
 
-#section("Anlasser defekt", color: colors.emergency, line-height: 1.25em)[
+#section("Anlasser defekt", color: colors.emergency)[
   #step("Anstürzen", "175 km/h")
   #comment(text(fill: colors.emergency, [benötigt min. 150m Höhe]))
 ]
 
-#section([Feuer #text(size: 0.8em, "(am Boden)")], color: colors.emergency, line-height: 1.25em)[
+#section([Feuer #text(size: 0.8em, "(am Boden)")], color: colors.emergency)[
   #step("Brandhahn", "Zu")
   #step("Zündung", "Aus")
   #step("Triebwerk", "Ausgefahren lassen")
@@ -184,7 +184,7 @@
   #step("Feuer", "Löschen")
 ]
 
-#section([Feuer #text(size: 0.8em, "(im Flug)")], color: colors.emergency, line-height: 1.25em)[
+#section([Feuer #text(size: 0.8em, "(im Flug)")], color: colors.emergency)[
   #step("Brandhahn", "Zu")
   #step("Gashebel", [Vollgas #emph(text(fill: colors.emergency, [bis Motor steht]))])
   #step("Triebwerk", [Einfahren #emph(text(fill: colors.emergency, [Flammen ersticken]))])
@@ -193,7 +193,7 @@
   #step("Feuer", "Löschen")
 ]
 
-#section("Wasserlandung", color: colors.emergency, line-height: 1.25em)[
+#section("Wasserlandung", color: colors.emergency)[
   #step("Fahrwerk", "Ausfahren")
   #step("Fallschirmgurte", "Öffnen")
   #step("Anschnallgurte", "Festziehen")

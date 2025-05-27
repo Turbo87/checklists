@@ -24,6 +24,11 @@ jobs:
           chmod +x typst-x86_64-unknown-linux-musl/typst
           mv typst-x86_64-unknown-linux-musl/typst .
 
+      - name: Install Inter font
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-inter
+
       - name: Find and compile Typst files
         run: |
           # Find all .typ files except template.typ

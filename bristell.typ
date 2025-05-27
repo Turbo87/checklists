@@ -77,7 +77,7 @@
 
 #show: checklist.with(aircraft: aircraft)
 
-#section("Vor dem Abflug", color: colors.takeoff, line-height: 1.3em)[
+#section("Vor dem Abflug", color: colors.takeoff)[
   #step("Haube", "Verriegelt")
   #step("Lane A/B", "Ein")
   #step("Warnlampe A/B", "Aus")
@@ -92,7 +92,7 @@
   #step("Positionslichter", "nach Bedarf")
 ]
 
-#section("Start", color: colors.takeoff, line-height: 1.3em)[
+#section("Start", color: colors.takeoff)[
   #step("Bremse", "Gelöst")
   #step("Gashebel", "Vollgas")
   #step("Drehzahl", "Geprüft")
@@ -103,7 +103,7 @@
   #comment([V#sub[Y] (best rate of climb) / V#sub[X] (best angle of climb)])
 ]
 
-#section("Reiseflug", color: colors.takeoff, line-height: 1.3em)[
+#section("Reiseflug", color: colors.takeoff)[
   #step("Gashebel", "nach Bedarf")
   #comment("max. 5800 RPM / 5500 RPM (dauerhaft)")
   #step("Trimmung", "nach Bedarf")
@@ -113,13 +113,13 @@
   #comment("Alle 20 Minuten wechseln")
 ]
 
-#section("Sinkflug", color: colors.landing, line-height: 1.3em)[
+#section("Sinkflug", color: colors.landing)[
   #step("Gashebel", "15-17 inHg")
   #step("Geschwindigkeit", "165-185 km/h")
   #comment("→ Sinkrate 500 ft/min")
 ]
 
-#section("Anflug", color: colors.landing, line-height: 1.3em)[
+#section("Anflug", color: colors.landing)[
   #step("ATIS / Wetter", "Informationen eingeholt")
   #step("Anflugverfahren", "Durchgesprochen")
   #step("Gurte", "Festgezogen")
@@ -130,13 +130,13 @@
   #step("Klappen", "10°")
 ]
 
-#section("Endanflug", color: colors.landing, line-height: 1.4em)[
+#section("Endanflug", color: colors.landing, line-height: 1.5em)[
   #step("Geschwindigkeit", "120 km/h")
   #step("Klappen", "30°")
   #step("Gashebel", "7 inHg / über 2600 RPM")
 ]
 
-#section("Durchstarten", color: colors.emergency, line-height: 1.4em)[
+#section("Durchstarten", color: colors.emergency, line-height: 1.5em)[
   #comment(text(fill: colors.emergency, weight: "bold", "POWER → PITCH → FLAPS"))
   #step("Gashebel", "Vollgas")
   #step("Geschwindigkeit", "130 km/h")
@@ -145,19 +145,19 @@
   #step("Geschwindigkeit", "148 km/h")
 ]
 
-#section("Landung", color: colors.landing, line-height: 1.4em)[
+#section("Landung", color: colors.landing, line-height: 1.5em)[
   #step("Gashebel", "Leerlauf")
   #step("Aufsetzen", "auf den Haupträdern")
   #step("Bremsen", "nach Bedarf")
   #step("Klappen", "Einfahren")
 ]
 
-#section("Nach der Landung", color: colors.landing, line-height: 1.4em)[
+#section("Nach der Landung", color: colors.landing, line-height: 1.5em)[
   #step("Gashebel", "nach Bedarf")
   #step("Trimmung", "Neutral")
 ]
 
-#section("Abstellen und Parken", color: colors.parking, line-height: 1.4em)[
+#section("Abstellen und Parken", color: colors.parking, line-height: 1.5em)[
   #step("Parkbremse", "Gesetzt")
   #step("Gashebel", "2000 RPM")
   #step("Timer", "Gestartet")
