@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+env:
+  # renovate: datasource=crate depName=typst versioning=semver
+  TYPST_VERSION: 0.13.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Install Typst
+        run: |
+          curl -L -o typst.tar.xz https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz
+          tar -xf typst.tar.xz
+          chmod +x typst-x86_64-unknown-linux-musl/typst
+          mv typst-x86_64-unknown-linux-musl/typst .
+
+      - name: Find and compile Typst files
+        run: |
+          # Find all .typ files except template.typ
+          for file in $(find . -name "*.typ" -not -name "template.typ"); do
+            echo "Compiling $file"
+            ./typst compile "$file"
+          done
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: pdf-files
+          path: "**/*.pdf"
+          if-no-files-found: error
