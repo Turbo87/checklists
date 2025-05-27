@@ -66,27 +66,28 @@
 }
 
 #let step(a, b) = {
-context {
-  let color = if emergency_state.get() {
-    colors.emergency
-  } else {
-    colors.checklist
-  }
+  context {
+    let color = if emergency_state.get() {
+      colors.emergency
+    } else {
+      colors.checklist
+    }
 
-  show emph: it => {
-    text(size: 0.9em, fill: color, it.body)
-  }
+    show emph: it => {
+      text(size: 0.9em, fill: color, it.body)
+    }
 
-  if a != "" {
-    text(weight: "light", a)
-    " "
+    if a != "" {
+      text(weight: "light", a)
+      " "
+    }
+    box(width: 1fr, repeat[.])
+    if b != "" {
+      " "
+      text(weight: "medium", b)
+    }
+    linebreak()
   }
-  box(width: 1fr, repeat[.])
-  if b != "" {
-    " "
-    text(weight: "medium", b)
-  }
-  linebreak()}
 }
 
 #let comment(body) = {
