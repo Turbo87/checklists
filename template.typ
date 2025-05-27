@@ -19,7 +19,7 @@
 ) = {
   set page("a5", margin: (x: 7mm, y: 7mm), columns: 2)
   set columns(gutter: 4pt)
-  set text(font: "Helvetica Neue", size: 9pt)
+  set text(font: "Inter", size: 8.5pt)
   set par(spacing: 0pt)
 
   emergency_state.update(emergency)
@@ -45,11 +45,11 @@
   body
 }
 
-#let section(title, color: none, line-height: 1.5em, body) = {
+#let section(title, color: none, line-height: 1.6em, body) = {
   set par(leading: line-height - 1em)
 
   let stroke = .5pt
-  let inset = (top: 2pt, bottom: 6pt, rest: 4pt)
+  let inset = (bottom: 5pt, rest: 4pt)
 
   let color = if color != none {
     color
