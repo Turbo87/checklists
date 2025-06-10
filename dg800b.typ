@@ -12,6 +12,8 @@
   #step("Gurte", "Angelegt")
   #step("Pedale", "Eingestellt")
   #step("Höhenmesser", "Eingestellt")
+  #step("Funk", "Eingestellt")
+  #step("Headset", "Angelegt")
   #step("Bremsklappen", "Geprüft")
   #step("Steuerung", "Geprüft")
 ]
