@@ -128,6 +128,7 @@
   #step("AUX Pump", "Ein")
   #step("Geschwindigkeit", "140 km/h")
   #step("Klappen", "10°")
+  #step("Landescheinwerfer","An")
 ]
 
 #section("Endanflug", color: colors.landing, line-height: 1.5em)[
@@ -155,6 +156,7 @@
 #section("Nach der Landung", color: colors.landing, line-height: 1.5em)[
   #step("Gashebel", "nach Bedarf")
   #step("Trimmung", "Neutral")
+  #step("Landescheinwerfer","Aus")
 ]
 
 #section("Abstellen und Parken", color: colors.parking, line-height: 1.5em)[
